@@ -1,0 +1,175 @@
+.speero-modal {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1100;
+  background: rgba(25, 27, 35, 0.7);
+}
+
+.speero-modal-inner {
+  position: absolute;
+  width: 500px;
+  max-width: 90%;
+  background: white;
+  padding: 48px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#spotlight .wp-block-group__inner-container > .is-layout-flex.wp-block-buttons > div:nth-child(1) {
+  margin-right: 25px;
+}
+
+.is-layout-flex .is-style-btn-link {
+  margin-top: 20px;
+}
+
+a.speero-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+a.speero-close-btn:hover {
+  cursor: pointer;
+}
+
+.speero-modal p {
+  text-align: center;
+  color: #171a22;
+}
+
+p.speero-section-title {
+  font: 700 24px/29px Inter;
+  margin: 24px 0 12px;
+}
+
+p.speero-copy {
+  font: 400 14px/21px Inter;
+  margin-bottom: 24px;
+}
+
+p.speero-copy span {
+  font-weight: 700;
+}
+
+.speero-modal a.speero-signup-cta {
+  background: #ff642d;
+  border-radius: 4px;
+  border: none;
+  padding: 17px 56px;
+  font: 500 18px/22px Inter;
+  text-decoration: none;
+  color: white;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  animation-name: fade;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+}
+
+.speero-arrow-svg {
+  fill: white;
+  pointer-events: all;
+}
+
+.speero-arrow-svg:hover {
+  fill: #ffbd00 !important;
+}
+
+.speero-flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.speero-demo-btn {
+  min-width: 210px;
+  margin-top: 30px;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 887px) {
+  .speero-modal-inner {
+    padding: 30px 15px;
+  }
+
+  .speero-close-btn {
+    top: 17px;
+    right: 17px;
+  }
+
+  .speero-section-title {
+    font-size: 31px;
+    line-height: 31px;
+    margin-bottom: 30px;
+  }
+
+  .speero-headline {
+    font-size: 19px;
+    line-height: 22px;
+    margin-bottom: 15px;
+  }
+
+  .speero-copy {
+    font-size: 16px;
+    line-height: 23px;
+    margin-bottom: 25px;
+  }
+
+  .speero-step-no {
+    font-size: 12px;
+    line-height: 12px;
+    padding: 0 20px;
+    margin-top: 0;
+  }
+
+  .carouselSlide img {
+    margin-bottom: 25px !important;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .speero-demo-btn {
+    min-width: 100% !important;
+  }
+}
