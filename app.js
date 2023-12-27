@@ -14,61 +14,54 @@ function checkIfReady(fn) {
   }
 }
 checkIfReady(function () {
-  let target = document.querySelector('div[data-test="root-search-section"] button[class^="search_button"]');
-  if (target) {
-    target.addEventListener("click", function (e) {
+  let searchBtn = document.querySelector('div[data-test*="search"] button[class^="search_button"]');
+  if (searchBtn) {
+    searchBtn.addEventListener("click", function (e) {
       if (document.querySelector("div[data-path='search.no_results_modal']") && !document.querySelector(".speero-modal")) {
         e.stopPropagation();
-        buildModal(target);
+        buildModal();
       }
     });
   }
 });
 
-function buildModal(btn) {
+function buildModal() {
+  //grab user input
   let inputUrl = document.querySelector('input[data-test="search_input"]').value;
+
   //build modal structure
   const modalContainer = `<div class="speero-modal">
     <div class="speero-modal-inner">
-  ${svgLock}
-      <p class="speero-section-title">Oops, we haven’t made data for <br> {${inputUrl}} public yet</p>
-      <p class="speero-copy">Create a free account to access the data for <span>{${inputUrl}}</span><br> and comprehensive insights about <br>many other websites!</p>
-      <a class="speero-signup-cta" href="https://www.semrush.com/signup/">Try for Free  →</a>
+    <a class="speero-close-btn">${svgCloseBtn}</a>
+      ${svgLock}
+      <p class="speero-headline">
+        Oops, we haven’t made data for <br />
+        {${inputUrl}} public yet
+      </p>
+      <div class="speero-copy">
+        <p>Create a free account to access the data for <span class="speero-bold">{${inputUrl}}</span></p>
+        <p>and comprehensive insights about many other websites!</p>
+      </div>
+      <a class="speero-signup-cta" href="https://www.semrush.com/signup/">Try for Free →</a>
     </div>
   </div>`;
 
   //append modal to the page
   document.querySelector("body").insertAdjacentHTML("beforeend", modalContainer);
 
-  const modal = document.querySelector(".speero-modal-inner");
-
-  //add "X" svg close icon to the modal
-  modal.insertAdjacentHTML("afterbegin", `<a class="speero-close-btn">${svgCloseBtn}</a>`);
-
+  //make body unscrollable
   document.querySelector("html").style.overflowY = "hidden";
 
-  //document.querySelector(".speero-modal a").addEventListener("click", function(){
-  //	// document.querySelector("input[data-test='search_input']").value = "";
-  //	// console.log(document.querySelector("input[data-test='search_input']"))
-  //	btn.click();
-  //	// document.querySelector("div[class*='search_icon_'] svg[data-name='Close']").click();
-  //});
-
-  //when user clicks on the X or the "Book a demo" CTA, close the modal and make the body scrollable again
-  [document.querySelector(".speero-close-btn")].forEach(function (element) {
-    element.addEventListener("click", function () {
-      document.querySelector("html").style.overflowY = "auto";
-      document.querySelector(".speero-modal").remove();
-    });
+  //when user clicks on the X or outside the modal, close the modal and make the body scrollable again
+  document.querySelector(".speero-close-btn").addEventListener("click", closeModal);
+  document.querySelector(".speero-modal").addEventListener("click", function (e) {
+    if (e.target === this) {
+      closeModal();
+    }
   });
 }
 
-//tidy up CSS
-//add blurry background
-//add ability close pop-up when clicking outside
-//add hover to X inside pop-up
-//make sure that the modal isn't added twice
-//check HTML structure
-//check animations inside Figma
-//include https://www.semrush.com/website/google.com/overview/
-//exclude other domains such as .pt, .it
+function closeModal() {
+  document.querySelector("html").style.overflowY = "auto";
+  document.querySelector(".speero-modal").remove();
+}

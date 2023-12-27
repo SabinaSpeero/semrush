@@ -10,7 +10,7 @@
 .speero-modal-inner {
   position: absolute;
   width: 500px;
-  max-width: 90%;
+  max-width: 80%;
   background: white;
   padding: 48px;
   left: 50%;
@@ -19,26 +19,25 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
-#spotlight .wp-block-group__inner-container > .is-layout-flex.wp-block-buttons > div:nth-child(1) {
-  margin-right: 25px;
-}
-
-.is-layout-flex .is-style-btn-link {
-  margin-top: 20px;
-}
-
-a.speero-close-btn {
+.speero-close-btn {
   position: absolute;
   top: 15px;
   right: 15px;
 }
 
-a.speero-close-btn:hover {
+.speero-close-btn:hover {
   cursor: pointer;
 }
 
@@ -47,21 +46,27 @@ a.speero-close-btn:hover {
   color: #171a22;
 }
 
-p.speero-section-title {
+.speero-headline {
   font: 700 24px/29px Inter;
   margin: 24px 0 12px;
 }
 
-p.speero-copy {
+.speero-copy {
   font: 400 14px/21px Inter;
   margin-bottom: 24px;
 }
 
-p.speero-copy span {
+.speero-copy p:nth-child(2) {
+  inline-size: 228px;
+  text-align: center;
+  margin: auto;
+}
+
+.speero-bold {
   font-weight: 700;
 }
 
-.speero-modal a.speero-signup-cta {
+.speero-signup-cta {
   background: #ff642d;
   border-radius: 4px;
   border: none;
@@ -71,105 +76,39 @@ p.speero-copy span {
   color: white;
 }
 
-.fade {
-  -webkit-animation-name: fade;
-  animation-name: fade;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
-}
-
-.prev,
-.next {
-  cursor: pointer;
-}
-
-.speero-arrow-svg {
-  fill: white;
-  pointer-events: all;
-}
-
-.speero-arrow-svg:hover {
-  fill: #ffbd00 !important;
-}
-
-.speero-flex-center {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.speero-demo-btn {
-  min-width: 210px;
-  margin-top: 30px;
-}
-
-@-webkit-keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@media (max-width: 887px) {
+@media (max-width: 767px) {
   .speero-modal-inner {
-    padding: 30px 15px;
+    padding: 40px 24px 45px;
+  }
+
+  .speero-modal-inner > svg {
+    width: 36px;
+    height: 36px;
   }
 
   .speero-close-btn {
-    top: 17px;
-    right: 17px;
+    top: 20px;
+    right: 20px;
   }
 
-  .speero-section-title {
-    font-size: 31px;
-    line-height: 31px;
-    margin-bottom: 30px;
+  .speero-close-btn svg {
+    width: 14px;
+    height: 14px;
   }
 
   .speero-headline {
-    font-size: 19px;
-    line-height: 22px;
-    margin-bottom: 15px;
+    font: 600 16px/22px Inter;
   }
 
   .speero-copy {
-    font-size: 16px;
-    line-height: 23px;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
   }
 
-  .speero-step-no {
-    font-size: 12px;
-    line-height: 12px;
-    padding: 0 20px;
-    margin-top: 0;
-  }
-
-  .carouselSlide img {
-    margin-bottom: 25px !important;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 400px) {
-  .speero-demo-btn {
-    min-width: 100% !important;
+  .speero-signup-cta {
+    font: 400 16px/24px Inter;
+    display: block;
+    padding: 9px 0;
+    text-align: center;
+    width: 100%;
   }
 }
