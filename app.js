@@ -6,14 +6,15 @@ let svgCloseBtn = `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" x
 <path d="M17.7071 1.70711C18.0976 1.31658 18.0976 0.683417 17.7071 0.292893C17.3166 -0.0976311 16.6834 -0.0976311 16.2929 0.292893L9 7.58579L1.70711 0.292894C1.31658 -0.0976295 0.683417 -0.0976295 0.292893 0.292894C-0.0976311 0.683418 -0.097631 1.31658 0.292893 1.70711L7.58579 9L0.292894 16.2929C-0.0976304 16.6834 -0.0976304 17.3166 0.292894 17.7071C0.683418 18.0976 1.31658 18.0976 1.70711 17.7071L9 10.4142L16.2929 17.7071C16.6834 18.0976 17.3166 18.0976 17.7071 17.7071C18.0976 17.3166 18.0976 16.6834 17.7071 16.2929L10.4142 9L17.7071 1.70711Z" fill="#A9ABB6"/>
 </svg>`;
 
-function checkIfReady(fn) {
+function checkIfReadySem81(fn) {
   if (document.readyState != "loading") {
     fn();
   } else {
     document.addEventListener("DOMContentLoaded", fn);
   }
 }
-checkIfReady(function () {
+
+checkIfReadySem81(function () {
   let searchBtn = document.querySelector('div[data-test*="search"] button[class^="search_button"]');
   if (searchBtn) {
     searchBtn.addEventListener("click", function (e) {
