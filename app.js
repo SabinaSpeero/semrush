@@ -18,7 +18,7 @@ checkIfReadySem81(function () {
 
     //open modal using Enter key
     document.querySelector('input[data-test="search_input"]').addEventListener("keydown", function (e) {
-      if (e.key === "Enter" && document.querySelector("div[data-path='search.no_results_modal']") && !document.querySelector(".speero-modal")) {
+      if (e.keyCode === 13 && document.querySelector("div[data-path='search.no_results_modal']") && !document.querySelector(".speero-modal")) {
         e.stopImmediatePropagation();
         buildModal();
       }
@@ -44,7 +44,7 @@ function buildModal() {
     <a class="speero-close-btn">${svgCloseBtn}</a>
       ${svgLock}
       <p class="speero-headline">
-        Oops, we haven't made data for <br />
+        Oops, we haven’t made data for <br />
         {${inputUrl}} public yet
       </p>
       <div class="speero-copy">
@@ -64,7 +64,7 @@ function buildModal() {
   //close modal using ESC
   document.activeElement.blur();
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
+    if (e.keyCode === 27) {
       closeModal();
     }
   });
