@@ -44,14 +44,14 @@ function buildModal() {
     <a class="speero-close-btn">${svgCloseBtn}</a>
       ${svgLock}
       <p class="speero-headline">
-        Oops, we haven’t made data for <br />
+        Oops, we haven&#39;t made data for <br />
         {${inputUrl}} public yet
       </p>
       <div class="speero-copy">
         <p>Create a free account to access the data for <span class="speero-bold">{${inputUrl}}</span></p>
         <p>and comprehensive insights about many other websites!</p>
       </div>
-      <a class="speero-signup-cta" href="https://www.semrush.com/signup/">Try for Free →</a>
+      <a class="speero-signup-cta" href="https://www.semrush.com/signup/">Try for Free &#8594;</a>
     </div>
   </div>`;
 
