@@ -37,6 +37,7 @@ function buildModal() {
 
   //grab user input
   let inputUrl = document.querySelector('input[data-test="search_input"]').value;
+  let symbol = "&apos;";
 
   //build modal structure
   const modalContainer = `<div class="speero-modal">
@@ -44,7 +45,7 @@ function buildModal() {
     <a class="speero-close-btn">${svgCloseBtn}</a>
       ${svgLock}
       <p class="speero-headline">
-        Oops, we haven&apos;t made data for <br />
+        Oops, we haven${symbol}t made data for <br />
         {${inputUrl}} public yet
       </p>
       <div class="speero-copy">
